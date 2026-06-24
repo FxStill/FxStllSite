@@ -76,7 +76,7 @@
                 // save the cookie with the active tab
                 jQuery.cookie(jQuery('#gkMainWrap').attr('data-theme') + '_active_tab', i, {
                     expires: 365,
-                    path: '/FxStllSite/'
+                    path: '/'
                 });
             });
         });

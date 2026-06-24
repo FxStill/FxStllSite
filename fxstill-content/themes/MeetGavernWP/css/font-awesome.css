@@ -27,8 +27,8 @@
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url('/FxStllSite/fxstill-content/themes/MeetGavernWP/css/font-awesome/fontawesome-webfont.eot?v=3.2.1');
-  src: url('/FxStllSite/fxstill-content/themes/MeetGavernWP/css/font-awesome/fontawesome-webfont.eot#iefix&v=3.2.1') format('embedded-opentype'), url('/FxStllSite/fxstill-content/themes/MeetGavernWP/css/font-awesome/fontawesome-webfont.woff?v=3.2.1') format('woff'), url('/FxStllSite/fxstill-content/themes/MeetGavernWP/css/font-awesome/fontawesome-webfont.ttf?v=3.2.1') format('truetype'), url('/FxStllSite/fxstill-content/themes/MeetGavernWP/css/font-awesome/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');
+  src: url('/fxstill-content/themes/MeetGavernWP/css/font-awesome/fontawesome-webfont.eot?v=3.2.1');
+  src: url('/fxstill-content/themes/MeetGavernWP/css/font-awesome/fontawesome-webfont.eot#iefix&v=3.2.1') format('embedded-opentype'), url('/fxstill-content/themes/MeetGavernWP/css/font-awesome/fontawesome-webfont.woff?v=3.2.1') format('woff'), url('/fxstill-content/themes/MeetGavernWP/css/font-awesome/fontawesome-webfont.ttf?v=3.2.1') format('truetype'), url('/fxstill-content/themes/MeetGavernWP/css/font-awesome/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');
   font-weight: normal;
   font-style: normal;
 }

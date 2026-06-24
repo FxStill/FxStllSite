@@ -9,11 +9,11 @@
 
 @font-face {
   font-family: "gavernwp";
-  src:url("/FxStllSite/fxstill-content/themes/MeetGavernWP/fonts/gavernwp/gavernwp.eot");
-  src:url("/FxStllSite/fxstill-content/themes/MeetGavernWP/fonts/gavernwp/gavernwp.eot#iefix") format("embedded-opentype"),
-    url("/FxStllSite/fxstill-content/themes/MeetGavernWP/fonts/gavernwp/gavernwp.woff") format("woff"),
-    url("/FxStllSite/fxstill-content/themes/MeetGavernWP/fonts/gavernwp/gavernwp.ttf") format("truetype"),
-    url("/FxStllSite/fxstill-content/themes/MeetGavernWP/fonts/gavernwp/gavernwp.svg#gavernwp") format("svg");
+  src:url("/fxstill-content/themes/MeetGavernWP/fonts/gavernwp/gavernwp.eot");
+  src:url("/fxstill-content/themes/MeetGavernWP/fonts/gavernwp/gavernwp.eot#iefix") format("embedded-opentype"),
+    url("/fxstill-content/themes/MeetGavernWP/fonts/gavernwp/gavernwp.woff") format("woff"),
+    url("/fxstill-content/themes/MeetGavernWP/fonts/gavernwp/gavernwp.ttf") format("truetype"),
+    url("/fxstill-content/themes/MeetGavernWP/fonts/gavernwp/gavernwp.svg#gavernwp") format("svg");
   font-weight: normal;
   font-style: normal;
 }

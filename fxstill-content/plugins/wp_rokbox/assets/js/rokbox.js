@@ -2151,7 +2151,7 @@ Element.defineCustomEvent(name, {
 						enablejsapi : 1
 					},
 					type : 'iframe',
-					url  : '/FxStllSite//www.youtube.com/embed/$3'
+					url  : '//www.youtube.com/embed/$3'
 				},
 				vimeo : {
 					matcher : /(?:vimeo(?:pro)?.com)\/(?:[^\d]+)?(\d+)(?:.*)/,
@@ -2164,7 +2164,7 @@ Element.defineCustomEvent(name, {
 						fullscreen    : 1
 					},
 					type : 'iframe',
-					url  : '/FxStllSite//player.vimeo.com/video/$1'
+					url  : '//player.vimeo.com/video/$1'
 				},
 				metacafe : {
 					matcher : /metacafe.com\/(?:watch|fplayer)\/([\w\-]{1,10})/,
@@ -2174,7 +2174,7 @@ Element.defineCustomEvent(name, {
 					type    : 'swf',
 					aspect  : {w: 600, h: 338},
 					url     : function(rez, params, obj) {
-						return '/FxStllSite//www.metacafe.com/fplayer/' + rez[1] + '/FxStllSite/.swf';
+						return '//www.metacafe.com/fplayer/' + rez[1] + '/.swf';
 					}
 				},
 				dailymotion : {
@@ -2184,7 +2184,7 @@ Element.defineCustomEvent(name, {
 						autoStart : 1
 					},
 					type : 'swf',
-					url  : '/FxStllSite//www.dailymotion.com/swf/video/$1'
+					url  : '//www.dailymotion.com/swf/video/$1'
 				},
 				twitvid : {
 					matcher : /(twitvid|telly)\.com\/([a-zA-Z0-9_\-\?\=]+)/i,
@@ -2192,7 +2192,7 @@ Element.defineCustomEvent(name, {
 						autoplay : 1
 					},
 					type : 'iframe',
-					url  : '/FxStllSite//www.$1.com/embed.php?guid=$2'
+					url  : '//www.$1.com/embed.php?guid=$2'
 				},
 				spotify : {
 					matcher : /open\.spotify\.com\/([a-zA-Z0-9\/]+)/i,
@@ -2200,25 +2200,25 @@ Element.defineCustomEvent(name, {
 					type    : 'iframe',
 					aspect  : {w: 300, h: 380},
 					url     : function(rez, params){
-						return '/FxStllSite//embed.spotify.com/?uri=' + rez[1].split('/FxStllSite/').join(':');
+						return '//embed.spotify.com/?uri=' + rez[1].split('/').join(':');
 					}
 				},
 				twitpic : {
 					matcher : /twitpic\.com\/(?!(?:place|photos|events)\/)([a-zA-Z0-9\?\=\-]+)/i,
 					type : 'image',
-					url  : '/FxStllSite//twitpic.com/show/full/$1/'
+					url  : '//twitpic.com/show/full/$1/'
 				},
 				instagram : {
 					matcher : /(instagr\.am|instagram\.com)\/p\/([a-zA-Z0-9_\-]+)\/?/i,
 					type : 'image',
-					url  : '/FxStllSite//$1/p/$2/media/?size=l'
+					url  : '//$1/p/$2/media/?size=l'
 				},
 				google_maps : {
 					matcher : /maps\.google\.([a-z]{2,3}(\.[a-z]{2})?)\/(\?ll=|maps\?)(.*)/i,
 					type    : 'iframe',
 					aspect  : {w: 640, h: 480},
 					url     : function(rez, params) {
-						return '/FxStllSite//maps.google.' + rez[1] + '/FxStllSite/' + rez[3] + '' + rez[4] + '&output=' + (rez[4].indexOf('layer=c') > 0 ? 'svembed' : 'embed');
+						return '//maps.google.' + rez[1] + '/' + rez[3] + '' + rez[4] + '&output=' + (rez[4].indexOf('layer=c') > 0 ? 'svembed' : 'embed');
 					}
 				}
 			}
@@ -2307,7 +2307,7 @@ Element.defineCustomEvent(name, {
 
     String.implement({
         htmlEncode: function(){
-            return this.replace(/&[^(#\d+;|a-z+;)]/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/FxStllSite/g, '&quot;');
+            return this.replace(/&[^(#\d+;|a-z+;)]/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
         },
 
         htmlDecode: function(){

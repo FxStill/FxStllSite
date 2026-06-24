@@ -49,7 +49,7 @@ jQuery.cookie = function (key, value, options) {
 jQuery(window).on('beforeunload', function () {
     jQuery.cookie('gk_last_opened_widget_rules_wrap', 0, {
         expires: 365,
-        path: '/FxStllSite/'
+        path: '/'
     });
 });
 
@@ -62,13 +62,13 @@ jQuery(document).click(function (e) {
             wrap.removeClass('active');
             jQuery.cookie('gk_last_opened_widget_rules_wrap', 0, {
                 expires: 365,
-                path: '/FxStllSite/'
+                path: '/'
             });
         } else {
             wrap.addClass('active');
             jQuery.cookie('gk_last_opened_widget_rules_wrap', wrap.attr('data-id'), {
                 expires: 365,
-                path: '/FxStllSite/'
+                path: '/'
             });
         }
     }

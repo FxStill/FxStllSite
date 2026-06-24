@@ -121,11 +121,11 @@
         // Function to change styles
 
         function changeStyle(style) {
-            var file = $GK_TMPL_URL + '/FxStllSite/css/' + style;
+            var file = $GK_TMPL_URL + '/css/' + style;
             jQuery('head').append('<link rel="stylesheet" href="' + file + '" type="text/css" />');
             jQuery.cookie($GK_TMPL_NAME + '_style', style, {
                 expires: 365,
-                path: '/FxStllSite/'
+                path: '/'
             });
         }
 

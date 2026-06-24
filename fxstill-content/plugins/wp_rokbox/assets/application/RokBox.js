@@ -12,7 +12,7 @@
 
     String.implement({
         htmlEncode: function(){
-            return this.replace(/&[^(#\d+;|a-z+;)]/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/FxStllSite/g, '&quot;');
+            return this.replace(/&[^(#\d+;|a-z+;)]/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
         },
 
         htmlDecode: function(){

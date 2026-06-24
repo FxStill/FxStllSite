@@ -122,7 +122,7 @@
 }
 
 #main-menu .sub-menu:before {
-	background: transparent url('/FxStllSite/fxstill-content/themes/MeetGavernWP/images/menu_arrow.png') no-repeat 0 0;
+	background: transparent url('/fxstill-content/themes/MeetGavernWP/images/menu_arrow.png') no-repeat 0 0;
 	content: "";
 	display: block;
 	height: 10px;
