@@ -1,0 +1,703 @@
+/* =========================================================
+   FXSTILL CATALOG LAYER
+   ADDITIVE COMPONENTS ONLY
+========================================================= */
+
+/* =========================================================
+   CATALOG HERO
+========================================================= */
+html {
+    scroll-behavior:smooth;
+}
+
+.fxstill-catalog-hero {
+    margin-bottom: 24px;
+    padding: 22px 26px;
+    background: #111827;
+    border: 1px solid #1f2937;
+    border-radius: 14px;
+}
+
+.fxstill-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #60a5fa;
+    margin-bottom: 10px;
+}
+
+.fxstill-catalog-title h1 {
+    margin: 0 0 10px;
+    font-size: 30px;
+    line-height: 1.1;
+}
+
+.fxstill-catalog-title p {
+    max-width: 760px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #9ca3af;
+}
+
+.fxstill-catalog-hero-inner {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+}
+
+.fxstill-platform-logo {
+    flex:0 0 auto;
+}
+
+.fxstill-platform-logo img {
+    max-width:100px;
+    height:auto;
+    display:block;
+    opacity:.9;
+}
+
+@media (max-width:900px) {
+
+    .fxstill-catalog-hero-inner {
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .fxstill-platform-logo img {
+        max-width:140px;
+    }
+
+}
+
+/* =========================================================
+   PLATFORM FILTERS
+========================================================= */
+
+.fxstill-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.fxstill-filter-bar button {
+    appearance: none;
+    -webkit-appearance: none;
+    background: #111827 !important;
+    border: 1px solid #1f2937 !important;
+    color: #9ca3af !important;
+    padding: 9px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    background-image: none !important;
+}
+
+.fxstill-filter-bar button:hover {
+    background: #182235 !important;
+    color: #ffffff !important;
+}
+
+.fxstill-filter-bar button.active {
+    background: rgba(37,99,235,0.14) !important;
+    border-color: rgba(96,165,250,0.35) !important;
+    color: #60a5fa !important;
+}
+
+.fxstill-filter-link {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:9px 14px;
+
+    border-radius:999px;
+
+    background:#111827;
+
+    border:1px solid #1f2937;
+
+    color:#9ca3af;
+
+    text-decoration:none;
+
+    font-size:12px;
+    font-weight:600;
+
+    transition:.2s ease;
+}
+
+.fxstill-filter-link:hover {
+    background:#182235;
+    color:#ffffff;
+}
+
+.fxstill-filter-link.active {
+    background:rgba(37,99,235,.14);
+    border-color:rgba(96,165,250,.35);
+    color:#60a5fa;
+}
+
+/* =========================================================
+   TERMINAL PRODUCT CARD
+========================================================= */
+
+.fxstill-card-terminal {
+    flex-direction: column !important;
+    gap: 18px;
+}
+
+/* =========================================================
+   TOP LINE
+========================================================= */
+
+.fxstill-card-topline {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+/* =========================================================
+   SMALL IMAGE
+========================================================= */
+
+.fxstill-card-terminal .fxstill-card-image {
+    flex: 0 0 140px;
+}
+
+.fxstill-card-terminal .fxstill-card-image img {
+    width: 140px;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.fxstill-card-heading {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.fxstill-card-heading h2 {
+    margin: 0 0 8px;
+    font-size: 24px;
+    line-height: 1.15;
+}
+
+.fxstill-card-subtitle {
+    font-size: 14px;
+    color: #60a5fa;
+}
+
+/* =========================================================
+   BADGES RIGHT
+========================================================= */
+
+.fxstill-card-terminal .fxstill-card-tags {
+    justify-content: flex-end;
+    margin-bottom: 0;
+    max-width: 240px;
+}
+
+/* =========================================================
+   FULL WIDTH DESCRIPTION
+========================================================= */
+
+.fxstill-card-description {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #d1d5db;
+}
+
+/* =========================================================
+   BOTTOM LINE
+========================================================= */
+
+.fxstill-card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+/* =========================================================
+   INLINE FEATURES
+========================================================= */
+
+.fxstill-feature-inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.fxstill-feature-inline span {
+    font-size: 11px;
+    color: #9ca3af;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid #1f2937;
+}
+
+/* =========================================================
+   CATALOG GRID (2 COLUMNS)
+========================================================= */
+
+.fxstill-grid-catalog {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px;
+}
+
+/* ВАЖНО: переопределяем flex-direction из базового .fxstill-card (row) на column */
+.fxstill-card-catalog {
+    flex-direction: column !important;
+    padding:16px;
+    border-radius:14px;
+    gap:14px;
+}
+
+.fxstill-card-catalog .fxstill-card-heading {
+    flex:1 1 auto;
+    min-width:0;
+}
+
+.fxstill-card-catalog .fxstill-card-tags {
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-top:10px;
+}
+
+.fxstill-card-catalog .fxstill-card-bottom {
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:14px;
+}
+
+.fxstill-card-catalog .fxstill-card-button-small {
+    padding:8px 14px;
+    font-size:12px;
+    border-radius:10px;
+}
+
+.fxstill-card-catalog .fxstill-card-topline {
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+}
+
+.fxstill-card-catalog .fxstill-card-image {
+    flex:0 0 110px;
+}
+
+.fxstill-card-catalog .fxstill-card-image img {
+    width:110px;
+    border-radius:10px;
+    display:block;
+}
+
+.fxstill-card-image a {
+    display: block;
+}
+
+.fxstill-card-image img {
+    float: none !important;
+    margin: 0 !important;
+    display: block !important;
+}
+
+.fxstill-card-catalog .fxstill-card-heading h2 {
+    margin:0 0 4px;
+    font-size:20px;
+    line-height:1.15;
+}
+
+.fxstill-card-catalog .fxstill-card-subtitle {
+    margin-bottom:8px;
+    font-size:12px;
+    color:#60a5fa;
+}
+
+.fxstill-card-catalog .fxstill-card-description {
+    font-size:12px;
+    line-height:1.55;
+    color:#9ca3af;
+    margin:0;
+    max-width:520px;
+}
+
+.fxstill-card-catalog .fxstill-badge {
+    height:24px;
+    padding:0 9px;
+    font-size:10px;
+}
+
+.fxstill-card-catalog .fxstill-card-bottom {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:14px;
+}
+
+@media (max-width:900px) {
+
+    .fxstill-grid-catalog {
+        grid-template-columns:1fr;
+    }
+
+    .fxstill-card-catalog .fxstill-card-topline {
+        flex-direction:column;
+    }
+
+    .fxstill-card-catalog .fxstill-card-tags {
+        justify-content:flex-start;
+        max-width:100%;
+    }
+
+    .fxstill-card-catalog .fxstill-card-bottom {
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+}
+
+/* =========================================================
+   CATALOG SECTIONS
+========================================================= */
+
+.fxstill-catalog-section {
+    margin-bottom: 18px;
+    background: #111827;
+    border: 1px solid #1f2937;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.fxstill-catalog-header {
+    padding: 0 18px;
+    border-bottom: 1px solid #1f2937;
+}
+
+/* =========================================================
+   CATALOG TOGGLE
+========================================================= */
+
+.fxstill-catalog-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 13px 18px;
+    background: transparent !important;
+    border: none !important;
+    color: #ffffff;
+    cursor: pointer;
+    font: inherit;
+    text-align: left;
+    white-space: nowrap;
+    appearance: none;
+    -webkit-appearance: none;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.fxstill-catalog-toggle:hover {
+    background: rgba(255,255,255,0.02) !important;
+}
+
+.fxstill-catalog-name {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.fxstill-toggle-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.fxstill-section-count {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: #6b7280;
+}
+
+/* =========================================================
+   CHEVRON
+   Символ ▼ смотрит вниз при rotate(0deg).
+   Закрыто (collapsed) = вправо = rotate(-90deg).
+   Открыто = вниз = rotate(0deg).
+========================================================= */
+
+/* базовый: закрыто = вправо (▶) */
+.fxstill-chevron {
+    display: inline-block;
+    width: 16px;
+    color: #9ca3af;
+    transform: rotate(-90deg);
+    transition: transform .2s ease;
+}
+
+/* catalog: открыто = вниз (▼) */
+.fxstill-catalog-section:not(.collapsed) .fxstill-chevron {
+    transform: rotate(0deg);
+}
+
+/* faq: открыто = вниз (▼) */
+.fxstill-faq-item.active .fxstill-chevron {
+    transform: rotate(0deg);
+}
+
+/* subgroup: закрыто = вправо (▶) — совпадает с базовым, явно для ясности */
+.fxstill-subgroup.collapsed .fxstill-chevron {
+    transform: rotate(-90deg);
+}
+
+/* =========================================================
+   FAQ PANEL
+========================================================= */
+
+.fxstill-faq-panel {
+    background: #111827;
+    border: 1px solid #1f2937;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.fxstill-faq-item + .fxstill-faq-item {
+    border-top: 1px solid #1f2937;
+}
+
+.fxstill-faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    text-align: left;
+}
+
+.fxstill-faq-question:hover {
+    background: rgba(255,255,255,.02);
+}
+
+.fxstill-faq-title {
+    color: #e5e7eb;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.fxstill-faq-answer {
+    display: none;
+    padding: 0 20px 20px;
+    color: #9ca3af;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.fxstill-faq-item.active .fxstill-faq-answer {
+    display: block;
+}
+
+/* =========================================================
+   COLLAPSIBLE CONTENT
+========================================================= */
+
+.fxstill-catalog-content {
+    max-height: 2000px;
+    opacity: 1;
+    overflow: hidden;
+    transition:
+        max-height .25s ease,
+        opacity .2s ease;
+}
+
+.fxstill-catalog-section.collapsed .fxstill-catalog-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+/* =========================================================
+   PRODUCT ROW
+========================================================= */
+
+.fxstill-product-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 16px 18px;
+    border-bottom: 1px solid #1f2937;
+    text-decoration: none;
+}
+
+.fxstill-product-row:last-child {
+    border-bottom: none;
+}
+
+.fxstill-product-row:hover {
+    background: #182235;
+}
+
+.fxstill-product-main h3 {
+    margin: 0 0 5px;
+    font-size: 15px;
+}
+
+.fxstill-product-main p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #9ca3af;
+}
+
+.fxstill-product-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.fxstill-product-meta span {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: #0b1120;
+    border: 1px solid #2b3547;
+    font-size: 11px;
+    color: #9ca3af;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .fxstill-card-topline {
+        flex-direction: column;
+    }
+
+    .fxstill-card-terminal .fxstill-card-tags {
+        justify-content: flex-start;
+        max-width: 100%;
+    }
+
+    .fxstill-card-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .fxstill-product-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+/* =========================================================
+   SUBGROUP (NESTED ACCORDION)
+========================================================= */
+
+.fxstill-subgroup {
+    border-top: 1px solid #1f2937;
+}
+
+.fxstill-subgroup:first-child {
+    border-top: none;
+}
+
+.fxstill-subgroup-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 11px 18px;
+    background: transparent !important;
+    border: none !important;
+    color: #9ca3af;
+    cursor: pointer;
+    font: inherit;
+    text-align: left;
+    appearance: none;
+    -webkit-appearance: none;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    white-space: nowrap;
+}
+
+.fxstill-subgroup-toggle:hover {
+    background: rgba(255,255,255,0.02) !important;
+    color: #e5e7eb;
+}
+
+.fxstill-subgroup-name {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: inherit;
+}
+
+.fxstill-subgroup-content {
+    overflow: hidden;
+    max-height: 4000px;
+    opacity: 1;
+    padding: 14px 18px;
+    transition:
+        max-height .25s ease,
+        opacity .2s ease,
+        padding .2s ease;
+}
+
+.fxstill-subgroup.collapsed .fxstill-subgroup-content {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/*========================================================
+   SONET — layout overrides для catalog toggle
+========================================================*/
+
+.fxstill-catalog-toggle {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+.fxstill-toggle-right {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+.fxstill-catalog-name,
+.fxstill-section-count,
+.fxstill-chevron {
+    display: inline-flex !important;
+    align-items: center !important;
+}

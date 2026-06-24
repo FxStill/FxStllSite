@@ -1,0 +1,557 @@
+﻿<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head><meta charset="UTF-8">
+	<title>FxStillOFI Indicator</title>
+	
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="FxStillOFI: Professional Order Flow Imbalance (OFI) indicator for NinjaTrader 8. Filter false breakouts, detect reversals, and see true market aggression in real-time"><meta name="keywords" content="FxStillOFI, Order Flow Imbalance, OFI indicator, NinjaTrader 8 indicator, NT8 order flow, professional trading indicator, filter false breakouts, order flow analysis, market aggression indicator, tick replay indicator, NinjaScript, institutional trading tool"><meta name="og:title" content="FxStillOFI Indicator">
+<meta name="og:type" content="article">
+<meta name="og:description" content="[dropcap]S[/dropcap]tart Seeing Who Truly Controls the Market. The indicator is included in the FxStill Market Insight Suite package.
+Tired of False Breakouts and Lagging Indicators?
+At the core of ">
+<meta name="og:url" content="/FxStllSite/indicators/fxstillofi-indicator/">
+	
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="shortcut icon" href="/FxStllSite/favicon.ico">
+	<link rel="pingback" href="/FxStllSite/xmlrpc.php">
+		<!--[if IE 9]>
+	<link rel="stylesheet" href="/FxStllSite/fxstill-content/themes/MeetGavernWP/css/ie9.css" />
+	<![endif]-->
+	<!--[if lt IE 9]>
+	<link rel="stylesheet" href="/FxStllSite/fxstill-content/themes/MeetGavernWP/css/ie8.css" />
+	<![endif]-->
+	
+		<!--[if lt IE 9]>
+<script src="/FxStllSite/fxstill-content/themes/MeetGavernWP/js/html5shiv.js"></script>
+<script src="/FxStllSite/fxstill-content/themes/MeetGavernWP/js/respond.js"></script>
+<![endif]-->
+	
+		
+	
+<style type="text/css">
+	.gk-page { max-width: 1120px; }
+		#gk-mainbody-columns > aside { width: 30%;}
+	#gk-mainbody-columns > section { width: 70%; }
+		
+	@media (min-width: 901px) {
+		#gk-mainmenu-collapse { height: auto!important; }
+	}
+</style>
+
+	
+		
+			
+	
+	
+		<script type="text/javascript">
+		var thickboxL10n = {
+			"next":"Next >",
+			"prev":"< Prev",
+			"image":"Image",
+			"of":"of",
+			"close":"Close",
+			"noiframes":"This feature requires inline frames. You have iframes disabled or your browser does not support them.",
+			"loadingAnimation":"/FxStllSite/fxstill-includes/js/thickbox/loadingAnimation.gif",
+			"closeImage":"/FxStllSite/fxstill-includes/js/thickbox/tb-close.png"
+		};
+	</script>
+
+		<meta name="robots" content="max-image-preview:large">
+<link rel="alternate" type="application/rss+xml" title="fxstill.com » Feed" href="/FxStllSite/feed/">
+<link rel="alternate" type="application/rss+xml" title="fxstill.com » Comments Feed" href="/FxStllSite/comments/feed/">
+<link rel="preload" as="font" href="/FxStllSite/fxstill-content/plugins/social-icons-widget-by-wpzoom/assets/font/academicons.woff2?v=1.9.2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="/FxStllSite/fxstill-content/plugins/social-icons-widget-by-wpzoom/assets/font/fontawesome-webfont.woff2?v=4.7.0" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="/FxStllSite/fxstill-content/plugins/social-icons-widget-by-wpzoom/assets/font/fa-brands-400.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="/FxStllSite/fxstill-content/plugins/social-icons-widget-by-wpzoom/assets/font/fa-regular-400.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="/FxStllSite/fxstill-content/plugins/social-icons-widget-by-wpzoom/assets/font/fa-solid-900.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="/FxStllSite/fxstill-content/plugins/social-icons-widget-by-wpzoom/assets/font/Genericons.woff" type="font/woff" crossorigin>
+<link rel="preload" as="font" href="/FxStllSite/fxstill-content/plugins/social-icons-widget-by-wpzoom/assets/font/socicon.woff2?v=4.6.0" type="font/woff2" crossorigin>
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="/FxStllSite/wp-json/oembed/1.0/embed?url=%2Findicators%2Ffxstillofi-indicator%2F">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="/FxStllSite/wp-json/oembed/1.0/embed?url=%2Findicators%2Ffxstillofi-indicator%2F&amp;format=xml">
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<link rel="stylesheet" id="gavern-normalize-css" href="/FxStllSite/fxstill-content/themes/MeetGavernWP/css/normalize.css?ver=7.0" media="all">
+<link rel="stylesheet" id="gavern-font-awesome-css" href="/FxStllSite/fxstill-content/themes/MeetGavernWP/css/font-awesome.css?ver=7.0" media="all">
+<link rel="stylesheet" id="gavern-template-css" href="/FxStllSite/fxstill-content/themes/MeetGavernWP/css/template.css?ver=7.0" media="all">
+<link rel="stylesheet" id="gavern-wp-css" href="/FxStllSite/fxstill-content/themes/MeetGavernWP/css/wp.css?ver=7.0" media="all">
+<link rel="stylesheet" id="gavern-stuff-css" href="/FxStllSite/fxstill-content/themes/MeetGavernWP/css/stuff.css?ver=7.0" media="all">
+<link rel="stylesheet" id="gavern-wpextensions-css" href="/FxStllSite/fxstill-content/themes/MeetGavernWP/css/wp.extensions.css?ver=7.0" media="all">
+<link rel="stylesheet" id="gavern-extensions-css" href="/FxStllSite/fxstill-content/themes/MeetGavernWP/css/extensions.css?ver=7.0" media="all">
+<link rel="stylesheet" id="fxstill-ui-css" href="/FxStllSite/fxstill-content/themes/MeetGavernWP/css/fxstill-ui.css?ver=7.0" media="all">
+<link rel="stylesheet" id="fxstill-ui-card-css" href="/FxStllSite/fxstill-content/themes/MeetGavernWP/css/fxstill-ui-card.css?ver=7.0" media="all">
+<link rel="stylesheet" id="gavern-shortcodes-typography-css" href="/FxStllSite/fxstill-content/themes/MeetGavernWP/css/shortcodes.typography.css?ver=7.0" media="all">
+<link rel="stylesheet" id="gavern-shortcodes-elements-css" href="/FxStllSite/fxstill-content/themes/MeetGavernWP/css/shortcodes.elements.css?ver=7.0" media="all">
+<link rel="stylesheet" id="gavern-shortcodes-template-css" href="/FxStllSite/fxstill-content/themes/MeetGavernWP/css/shortcodes.template.css?ver=7.0" media="all">
+<link rel="stylesheet" id="gavern-tablet-css" href="/FxStllSite/fxstill-content/themes/MeetGavernWP/css/tablet.css?ver=7.0" media="(max-width: 900px)">
+<link rel="stylesheet" id="gavern-mobile-css" href="/FxStllSite/fxstill-content/themes/MeetGavernWP/css/mobile.css?ver=7.0" media="(max-width: 540px)">
+<link rel="stylesheet" id="gavern-style-css" href="/FxStllSite/fxstill-content/themes/MeetGavernWP/css/style1.css?ver=7.0" media="all">
+<link rel="stylesheet" id="gavern-thickbox-css" href="/FxStllSite/fxstill-includes/js/thickbox/thickbox.css?ver=7.0" media="all">
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+
+<link rel="stylesheet" id="dashicons-css" href="/FxStllSite/fxstill-includes/css/dashicons.min.css?ver=7.0" media="all">
+<link rel="stylesheet" id="wpzoom-social-icons-academicons-css" href="/FxStllSite/fxstill-content/plugins/social-icons-widget-by-wpzoom/assets/css/academicons.min.css?ver=1780162039" media="all">
+<link rel="stylesheet" id="wpzoom-social-icons-socicon-css" href="/FxStllSite/fxstill-content/plugins/social-icons-widget-by-wpzoom/assets/css/wpzoom-socicon.css?ver=1780162039" media="all">
+<link rel="stylesheet" id="wpzoom-social-icons-font-awesome-5-css" href="/FxStllSite/fxstill-content/plugins/social-icons-widget-by-wpzoom/assets/css/font-awesome-5.min.css?ver=1780162039" media="all">
+<link rel="stylesheet" id="wpzoom-social-icons-genericons-css" href="/FxStllSite/fxstill-content/plugins/social-icons-widget-by-wpzoom/assets/css/genericons.css?ver=1780162039" media="all">
+
+<link rel="stylesheet" id="rokbox.css-css" href="/FxStllSite/fxstill-content/plugins/wp_rokbox/assets/styles/rokbox.css?ver=2.53" media="all">
+<link rel="stylesheet" id="wpzoom-social-icons-font-awesome-3-css" href="/FxStllSite/fxstill-content/plugins/social-icons-widget-by-wpzoom/assets/css/font-awesome-3.min.css?ver=1780162039" media="all">
+<link rel="stylesheet" id="wpzoom-social-icons-styles-css" href="/FxStllSite/fxstill-content/plugins/social-icons-widget-by-wpzoom/assets/css/wpzoom-social-icons-styles.css?ver=1780162039" media="all">
+<script id="mootools.js-js" src="/FxStllSite/fxstill-content/plugins/wp_rokbox/assets/js/mootools.js?ver=1.4.5"></script>
+<script id="rokbox.js-js" src="/FxStllSite/fxstill-content/plugins/wp_rokbox/assets/js/rokbox.js?ver=2.53"></script>
+<script id="jquery-core-js" src="/FxStllSite/fxstill-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="/FxStllSite/fxstill-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+<link rel="https://api.w.org/" href="/FxStllSite/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="/FxStllSite/wp-json/wp/v2/posts/5049"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="/FxStllSite/xmlrpc.php?rsd">
+<link rel="canonical" href="/FxStllSite/indicators/fxstillofi-indicator/">
+<link rel="shortlink" href="/FxStllSite/?p=5049">
+<style type="text/css">
+			.wpsdc-drop-cap {
+				float : left;				
+				padding : 0.25em 0.05em 0.25em 0;				
+				font-size : 5em;
+				line-height : 0.4em;color : #ffb251;}
+		</style><script type="text/javascript">if (typeof RokBoxSettings == 'undefined') RokBoxSettings = {pc: '100'};</script>
+<link href="/FxStllSite/?opensearch_description=1" title="fxstill.com" rel="search" type="application/opensearchdescription+xml"><link rel="shortcut icon" href="/FxStllSite/fxstill-content/uploads/2020/11/rocket32x32.png" type="image/x-icon">
+	
+	<link href="/FxStllSite/fxstill-content/themes/MeetGavernWP/fonts/Colaborate/stylesheet.css" rel="stylesheet" type="text/css"><style type="text/css">
+body { font-family: Arial, Helvetica, sans-serif; }
+
+h1, h2, h3, h4, h5, h6,
+#gk-head a.textLogo { font-family: 'Colaborate'; }
+
+</style>
+	<script type="text/javascript">
+           $GK_PAGE_URL = '';
+           $GK_TMPL_URL = '/FxStllSite/fxstill-content/themes/MeetGavernWP';
+           $GK_TMPL_NAME = 'meetgavernwp';
+           $GK_MENU = [];
+           $GK_MENU["mainmenu"] = [];
+           $GK_MENU["mainmenu"]["animation"] = "width_height_opacity";
+           $GK_MENU["mainmenu"]["animation_speed"] = "fast";
+           $GK_MENU["footermenu"] = [];
+           $GK_MENU["footermenu"]["animation"] = "none";
+           $GK_MENU["footermenu"]["animation_speed"] = "normal";
+        </script>
+		
+		
+	
+		
+	</head><body class="wp-singular post-template-default single single-post postid-5049 single-format-standard wp-theme-MeetGavernWP"><div><h1 style="text-align: center; color: #5990de;">Stop Trading Blindly. <span style="color: #FFB251;">Start Trading with Precision.</span></h1></div>
+
+	<header id="gk-head">
+		<div class="gk-page">
+						<h1>
+				<a href="/FxStllSite/" class="imageLogo"><img src="/FxStllSite/fxstill-content/uploads/2026/05/logo_ntmt.png" alt="FxStill, NinjaTrader, MetaTrader" width="100" height="121"></a>
+			</h1>
+						
+						<a href="#" id="gk-mainmenu-toggle">
+				Main menu			</a>
+			
+			<nav id="gk-mainmenu-collapse" class="menu-hidden" data-btn="gk-mainmenu-toggle">	
+				<ul id="main-menu" class="menu gk_normal"><li id="menu-item-127" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-127"><a href="/FxStllSite/">Main</a></li>
+<li id="menu-item-5439" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5439"><a href="/FxStllSite/professional-ninjatrader-tools/">Professional NinjaTrader® Tools</a></li>
+<li id="menu-item-5603" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5603"><a href="/FxStllSite/professional-metatrader-tools/">Professional MetaTrader® Tools</a></li>
+<li id="menu-item-4723" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4723"><a href="/FxStllSite/f-a-q/">F.A.Q.</a></li>
+</ul>			</nav>
+					</div>
+	</header>
+
+
+
+
+<div class="gk-page-wrap">
+	<div class="gk-page">
+		<div id="gk-mainbody-columns">
+			<section>
+								
+				<!-- Mainbody, breadcrumbs -->
+								<div id="gk-breadcrumb-area">
+					<nav class="gk-breadcrumbs"><a href="/FxStllSite/" class="gk-home">fxstill.com</a><a href="/FxStllSite/category/indicators/" rel="category tag">Indicators</a> <a href="/FxStllSite/category/ninjatrader/" rel="category tag">NinjaTrader</a> <a href="/FxStllSite/category/products/" rel="category tag">Products</a><span class="gk-current">FxStillOFI Indicator</span></nav>				</div>
+				
+<section id="gk-mainbody">
+			
+	<article id="post-5049" class="post-5049 post type-post status-publish format-standard hentry category-indicators category-ninjatrader category-products tag-ninjascript tag-ninjatrader tag-our-production">
+		<header>
+			
+						 	
+ 	 	<aside class="meta">
+	 	<dl>
+	 			 		<dt class="date">
+	 			Post date:	 		</dt>
+	 		
+	 		<dd>
+	 			<a href="/FxStllSite/indicators/fxstillofi-indicator/" title="19:39" rel="bookmark">
+	 				<time class="entry-date" datetime="2026-05-01T19:39:26+03:00">
+	 					01	
+	 					<span>May</span>
+	 				</time>
+	 			</a>
+	 		</dd>
+		 		
+	 			 		
+	 			 		
+	 				 				 		<dt class="category">
+		 			Category:		 		</dt>
+		 		<dd>
+		 			<a href="/FxStllSite/category/indicators/" rel="category tag">Indicators</a>, <a href="/FxStllSite/category/ninjatrader/" rel="category tag">NinjaTrader</a>, <a href="/FxStllSite/category/products/" rel="category tag">Products</a>		 		</dd>
+		 				 		
+		 				 		<dt class="author">
+		 			Author:		 		</dt>
+		 		<dd>
+		 			<a class="url fn n" href="/FxStllSite/author/andrei60/" title="View all posts by Ondrei" rel="author">Ondrei</a>
+		 		</dd>
+		 				 		
+		 		 	
+		 			
+		 				 		<dt class="tags">
+		 			Tags:		 		</dt>
+		 		<dd>
+		 			<a href="/FxStllSite/tag/ninjascript/" rel="tag">NinjaScript</a>, <a href="/FxStllSite/tag/ninjatrader/" rel="tag">NinjaTrader</a>, <a href="/FxStllSite/tag/our-production/" rel="tag">Our production</a>		 		</dd>
+		 				 				 		<dd class="bookmark">
+		 			<a href="/FxStllSite/indicators/fxstillofi-indicator/" title="Permalink to FxStillOFI Indicator" rel="bookmark">permalink</a>
+		 		</dd>
+		 		
+		 			 		 		</dl>
+ 	</aside>
+ 	 	
+ 				
+<h1>
+			FxStillOFI Indicator		
+	</h1>
+
+		</header>
+		
+		
+			
+				<section class="content">
+			<p><a href="/FxStllSite/fxstill-content/uploads/2025/11/FxStillOFI_view.png" data-rokbox=""><img decoding="async" class="alignleft" src="/FxStllSite/fxstill-content/uploads/2025/11/FxStillOFI_view_thb.png" alt=""></a><span class="wpsdc-drop-cap">S</span>tart Seeing Who Truly Controls the Market. The indicator is included in the “<a href="/FxStllSite/indicators/fxstill-market-insight-suite-version-1"><strong>FxStill Market Insight Suite</strong></a>” package.<span id="more-5049"></span></p>
+<h2>Tired of False Breakouts and Lagging Indicators?</h2>
+<p>At the core of every price movement is a battle between buyers and sellers. Traditional volume indicators show how much was traded, and price action shows where. But they fail to answer the most critical question: <strong>Who won the battle?</strong><br>
+This is why 70% of breakouts turn out to be false, and you often enter a trade too late. You are trading blind, relying on incomplete information.</p>
+<h2>Introducing FxStillOFI: Your Market X-Ray for NinjaTrader 8</h2>
+<p><strong>FxStillOFI</strong> is a professional indicator for NinjaTrader 8 that will fundamentally change your approach to market analysis. It calculates and visualizes <strong>Order Flow Imbalance (OFI)</strong> in real-time, giving you unprecedented clarity.</p>
+<ul>
+<li><strong>OFI shows who is dominating: aggressive buyers or aggressive sellers.</strong> It’s not just volume—it’s the pure, directional force behind every tick.</li>
+<li><strong>Traditional Volume:</strong> Shows <strong>how much</strong> was traded.</li>
+<li><strong>Price Action:</strong> Shows <strong>where</strong> it was traded.</li>
+<li><strong>FxStillOFI (OFI):</strong> Shows <strong>who won</strong> — buyers or sellers.</li>
+</ul>
+<h2>What Will You Gain by Using FxStillOFI?</h2>
+<p>FxStillOFI is more than just a tool. It is your <strong>competitive edge</strong> that allows you to trade at the level of institutional players.</p>
+<table>
+<thead>
+<tr>
+<th>Trader Benefit</th>
+<th>How It Works (Feature)</th>
+<th>Result for Your Account</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>See the True Capital Flow</strong></td>
+<td>OFI calculation ranging from -1.0 to +1.0, reflecting aggression.</td>
+<td>Identify when “big players” are accumulating or distributing positions, avoiding traps.</td>
+</tr>
+<tr>
+<td><strong>Filter Out False Breakouts</strong></td>
+<td>Breakout confirmation with strong directional OFI (e.g., &gt; +0.4).</td>
+<td><strong>Avoid over 70% of failed breakouts.</strong> Enter trades only when genuine strength is confirmed.</td>
+</tr>
+<tr>
+<td><strong>Detect Exhaustion and Reversals</strong></td>
+<td>Tracking OFI weakening while the price is still trending.</td>
+<td>Exit trades before the crowd realizes the momentum is gone. <strong>Catch reversals before anyone else.</strong></td>
+</tr>
+<tr>
+<td><strong>Optimize Your Entry Point</strong></td>
+<td>Using OFI to enter on pullbacks in a trending market.</td>
+<td>Stop chasing the price. Enter the market with maximum confidence, confirmed by order flow.</td>
+</tr>
+<tr>
+<td><strong>Unique OFI Candle Analysis</strong></td>
+<td>Visualization of OFI as Japanese candlesticks (CANDLES Mode).</td>
+<td>Apply candlestick patterns (Doji, Engulfing, Hammer) directly to order flow data — <strong>this level of detail is unavailable in other indicators.</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>The indicator works with the following components as a data source:</h3>
+<ul>
+<li><strong>Tick ​​data (1 tick)</strong></li>
+<li><strong>Minute data (</strong><strong>N</strong><strong> minute</strong><strong>s</strong><strong>)</strong></li>
+</ul>
+<h2>Key Features That Give You Control:</h2>
+<p><em>FxStillOFI is designed for maximum flexibility and performance:</em></p>
+<ul>
+<li><strong>Three Display Modes:</strong> Choose between clean <strong>LINES</strong>, clear <strong>BARS</strong> (Histograms), or the unique <strong>OFI CANDLES</strong> for deep microstructural analysis.<a href="/FxStllSite/fxstill-content/uploads/2025/11/FxStillOFI_view.png" data-rokbox=""><img decoding="async" class="aligncenter" src="/FxStllSite/fxstill-content/uploads/2025/11/FxStillOFI_view_thb.png" alt=""></a></li>
+</ul>
+<ul>
+<li><strong>Flexible Reset Modes:</strong> Analyze order flow by resetting on every candle (<strong>NEW BAR</strong>), at the start of a session (<strong>NEW SESSION</strong>), or even within a custom time interval (<strong>TIME INTERVAL</strong>) — perfect for analyzing specific trading sessions (e.g., London open).<a href="/FxStllSite/fxstill-content/uploads/2025/11/FxStillOFI_reset.png" data-rokbox=""><img decoding="async" class="aligncenter" src="/FxStllSite/fxstill-content/uploads/2025/11/FxStillOFI_reset_thb.png" alt=""></a></li>
+</ul>
+<ul>
+<li><strong>Moving Average (MA) Integration:</strong> Smooth out noise and identify momentum shifts with a customizable MA. The crossover of OFI and its MA is a clear signal for action.</li>
+<li><strong>High Performance:</strong> Limiting the calculation to the last N bars (default 100) ensures <strong>lightning-fast operation</strong> even with high-frequency data.</li>
+<li><strong>Algo-Trading Ready:</strong> Full access to OFI data via <strong>NinjaScript</strong> allows you to create and backtest automated trading strategies based on real order flow.</li>
+</ul>
+<h2>Your Trading Deserves Clarity</h2>
+<p>Stop guessing. Stop losing money on false signals.</p>
+<p><strong>FxStillOFI does not predict the future. It reveals the present with unprecedented clarity.</strong> In markets where information asymmetry determines winners and losers, this clarity is your single, most important advantage.</p>
+<p><strong>Take the step from blind trading to informed trading.</strong></p>
+<hr>
+<div data-slate-node="element">
+<h4>Attached file include:</h4>
+<ol>
+<li><a href="/FxStllSite/fxstill-content/uploads/2025/12/FxStillOFI-DOC.zip">Technical documentation</a> <strong class="gk-badge" data-style="style4">Must read!</strong></li>
+<li>Description of signals and patterns available with FxStillOFI</li>
+</ol>
+<hr>
+<h2>Delivery terms:</h2>
+<p>The indicator is part of our <a href="/FxStllSite/indicators/fxstill-market-insight-suite-version-1"><strong>FxStill Market Insight Suite</strong></a> and is typically included with it. In this case, the indicator comes at a premium price:</p>
+<h2 style="text-align: center;"><strong>Price</strong></h2>
+<table style="width: 100%;">
+<tbody>
+<tr>
+<th style="width: 30%;">Name</th>
+<th style="width: 70%;">Standalone (regular price)</th>
+</tr>
+<tr>
+<td style="width: 30%;"><strong>FxStillOFI</strong></td>
+<td style="width: 70%;">$69</td>
+</tr>
+</tbody>
+</table>
+<div><a href="/FxStllSite/contact-page-fxstill/"><strong><span class="HwtZe" lang="en"><span class="jCAhz ChMk0b"><span class="ryNqvb">Beware of scammers! <strong class="gk-badge" data-style="style4">Must read!</strong></span></span></span></strong></a></div>
+<div><div class="gk-legend" data-style="style3"><strong></strong>How to buy? Just <a href="/FxStllSite/contact-page-fxstill">write to me here</a>, or in <a href="https://t.me/AndreiFrX">Telegram</a>. <strong>Be sure to <a href="/FxStllSite/f-a-q">read the F.A.Q.</a></strong></div></div>
+<h5>More on my <a href="https://t.me/fxstill" target="_blank" rel="noopener">channel</a>. Don’t forget to subscribe!</h5>
+</div>
+			
+								</section>
+				
+		
+
+			
+		<footer>
+		<section id="gk-social-api"></section>			</footer>
+		</article>				
+		
+
+			
+			</section>
+
+							</section><!-- end of the mainbody section -->
+		
+									<aside id="gk-sidebar">
+				<div id="custom_html-7" class="widget_text box  red-border all widget_custom_html"><div><h3 class="box-title"> Beware of scammers!</h3><div class="textwidget custom-html-widget"><p><img class="alignleft size-thumbnail wp-image-4787" src="/FxStllSite/fxstill-content/uploads/2024/08/stop_small_thb.png" alt="" width="104" height="100">Attention. Recently, there have been more and more cases when <span style="color: #ff0000;"><strong>scammers</strong></span> acted on my behalf. They offer to pay, and after payment, they disappear. <span style="color: #0000ff;"><a href="/FxStllSite/contact-page-fxstill">Read more...</a></span></p></div></div></div><div id="custom_html-9" class="widget_text box  yellow-header all widget_custom_html"><div><h3 class="box-title"> Our competencies:</h3><div class="textwidget custom-html-widget"><a href="/FxStllSite/ninjatrader"><img class="alignleft size-thumbnail wp-image-3004" src="/FxStllSite/fxstill-content/uploads/2023/03/NinjaTrader_Wordmark_color_RGB.png" alt="NinjaTrader 8" width="150" height="76"></a>
+<a href="https://www.mql5.com/ru/users/andreifx60/news"><img class="alignleft size-thumbnail wp-image-3004" src="/FxStllSite/fxstill-content/uploads/2026/05/MetaTrader_4_5.png" alt="MetaTrader 4, 5" width="150" height="76"></a></div></div></div><div id="zoom-social-icons-widget-4" class="box  yellow-border all zoom-social-icons-widget"><div>
+		
+<ul class="zoom-social-icons-list zoom-social-icons-list--with-canvas zoom-social-icons-list--round zoom-social-icons-list--align-left">
+
+		
+				<li class="zoom-social_icons-list__item">
+		<a class="zoom-social_icons-list__link" href="https://t.me/fxstill" target="_blank" title="Our Channel. Subscribe now!">
+									
+			
+						<span class="zoom-social_icons-list-span social-icon socicon socicon-telegram" data-hover-rule="background-color" data-hover-color="#0088cc" style="background-color : #0088cc; font-size: 18px; padding:8px"></span>
+			
+						<span class="zoom-social_icons-list__label">Our Channel. Subscribe now!</span>
+					</a>
+	</li>
+
+	
+				<li class="zoom-social_icons-list__item">
+		<a class="zoom-social_icons-list__link" href="https://www.youtube.com/channel/UCXiYmVrvdDsHy-iRzGEZh2g" target="_blank" title="Our Video">
+									
+			
+						<span class="zoom-social_icons-list-span social-icon socicon socicon-youtube" data-hover-rule="background-color" data-hover-color="#e02a20" style="background-color : #e02a20; font-size: 18px; padding:8px"></span>
+			
+						<span class="zoom-social_icons-list__label">Our Video</span>
+					</a>
+	</li>
+
+	
+				<li class="zoom-social_icons-list__item">
+		<a class="zoom-social_icons-list__link" href="https://github.com/FxStill" target="_blank" title="Our GitHub">
+									
+			
+						<span class="zoom-social_icons-list-span social-icon socicon socicon-github" data-hover-rule="background-color" data-hover-color="#221e1b" style="background-color : #221e1b; font-size: 18px; padding:8px"></span>
+			
+						<span class="zoom-social_icons-list__label">Our GitHub</span>
+					</a>
+	</li>
+
+	
+				<li class="zoom-social_icons-list__item">
+		<a class="zoom-social_icons-list__link" href="https://vk.com/andreifrx" target="_blank" title="Our VKontakte">
+									
+			
+						<span class="zoom-social_icons-list-span social-icon socicon socicon-vkontakte" data-hover-rule="background-color" data-hover-color="#5a7fa6" style="background-color : #5a7fa6; font-size: 18px; padding:8px"></span>
+			
+						<span class="zoom-social_icons-list__label">Our VKontakte</span>
+					</a>
+	</li>
+
+	
+				<li class="zoom-social_icons-list__item">
+		<a class="zoom-social_icons-list__link" href="https://discordapp.com/users/1079357620797833326" target="_blank" title="Our Discord">
+									
+			
+						<span class="zoom-social_icons-list-span social-icon socicon socicon-discord2" data-hover-rule="background-color" data-hover-color="#1e73be" style="background-color : #4f26f2; font-size: 18px; padding:8px"></span>
+			
+						<span class="zoom-social_icons-list__label">Our Discord</span>
+					</a>
+	</li>
+
+	
+</ul>
+
+		</div></div><div id="custom_html-8" class="widget_text box  yellow-border all widget_custom_html"><div><h3 class="box-title"> Most downloaded</h3><div class="textwidget custom-html-widget"><div class="fxstill-sidebar-free-tools">
+
+	<div class="free-tools-header">
+		<img class="tool-icon" src="/FxStllSite/fxstill-content/uploads/2026/05/wrench.svg" alt="Free Tools">
+
+		<div class="free-tools-title">Free Trading Tools</div>
+	</div>
+
+<!-- TOOL 1 -->
+<a class="free-tool-item" href="https://github.com/FxStill/FreeIndicators/tree/main/MetaTrader%205/Indicators/Ehlers">
+	<div class="tool-name">Swiss Army Knife Indicator</div>
+	<div class="tool-desc">Multi-function toolkit for NT8 &amp; MT platforms</div>
+	<span class="free-badge">FREE</span>
+</a>
+
+<!-- TOOL 2 -->
+<a class="free-tool-item" href="https://github.com/FxStill/FreeIndicators/tree/main/NinjaTrader%208/Indicators/Ehlers">
+	<div class="tool-name">Sine Wave Indicator</div>
+	<div class="tool-desc">Cycle &amp; wave structure analysis tool</div>
+	<span class="free-badge">FREE</span>
+</a>
+
+<!-- TOOL 3 -->
+<a class="free-tool-item" href="https://github.com/FxStill/FreeIndicators/tree/main/MetaTrader%204/Indicators/Ehlers">
+	<div class="tool-name">Predictive Moving Average</div>
+	<div class="tool-desc">Forward-looking trend smoothing model</div>
+	<span class="free-badge">FREE</span>
+</a>
+
+<!-- TOOL 4 -->
+<a class="free-tool-item" href="https://github.com/FxStill/FreeIndicators/tree/main/NinjaTrader%208/Indicators/Ehlers">
+	<div class="tool-name">Fisher Transform Indicator</div>
+	<div class="tool-desc">Market reversal &amp; momentum detection</div>
+	<span class="free-badge">FREE</span>
+</a>
+
+</div></div></div></div>			</aside>
+								</div><!-- end of the #gk-mainbody-columns -->
+	</div><!-- end of the .gk-page section -->
+</div><!-- end of the .gk-page-wrap section -->	
+
+
+	<footer id="gk-footer" class="gk-page">			
+				
+		<div class="gk-copyrights">
+			<footer style="background: #111; color: #999; padding: 50px 20px 30px 20px; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; border-top: 2px solid #333;">
+    <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px;">
+        
+        <!-- Column 1: About -->
+        <div>
+            <!-- White Rocket Logo (Relative Path) -->
+            <img src="/FxStllSite/fxstill-content/uploads/2026/05/fxstill1_white.svg" alt="FxStill Logo" style="height: 50px; width: auto; margin-bottom: 20px; display: block;">
+            
+            <h4 style="color: #fff; margin-bottom: 15px; font-size: 17px; letter-spacing: 0.5px;">FxStill Analytics</h4>
+            <p style="font-size: 13px; line-height: 1.6; color: #888;">
+                Advanced technical analysis software and custom development services. We provide bespoke trading scripts and precision-engineered multi-platform solutions to empower your trading journey.
+            </p>
+        </div>
+
+        <!-- Column 2: Community -->
+        <div>
+            <h4 style="color: #fff; margin-bottom: 20px; font-size: 17px;">Community</h4>
+            <ul style="list-style: none; padding: 0; font-size: 14px; line-height: 2.5;">
+                <li><a href="https://t.me/fxstill" style="color: #bbb; text-decoration: none;" target="_blank">✈️ Telegram Channel</a></li>
+                <li><a href="https://www.youtube.com/@FxStill" style="color: #bbb; text-decoration: none;" target="_blank">📺 YouTube</a></li>
+                <li><a href="https://discordapp.com/users/andreifx_86122" style="color: #bbb; text-decoration: none;" target="_blank">💬 Discord</a></li>
+                <li><a href="https://vk.com/fxstill" style="color: #bbb; text-decoration: none;" target="_blank">🌐 VKontakte</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Resources -->
+        <div>
+            <h4 style="color: #fff; margin-bottom: 20px; font-size: 17px;">Resources</h4>
+            <ul style="list-style: none; padding: 0; font-size: 14px; line-height: 2.5;">
+                <li><a href="https://github.com/FxStill/FreeIndicators" style="color: #bbb; text-decoration: none;" target="_blank">📦 Free Indicators (GitHub )</a></li>
+<li><a href="/FxStllSite/this-project" style="color: #bbb; text-decoration: none;">About the project</a></li>
+                <li><a href="/FxStllSite/f-a-q" style="color: #bbb; text-decoration: none;">F.A.Q.</a></li>
+                <li><a href="/FxStllSite/contact-page-fxstill" style="color: #bbb; text-decoration: none;">Contacts</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Bottom: Disclaimer & Copyright -->
+    <div style="max-width: 1100px; margin: 40px auto 0 auto; padding-top: 25px; border-top: 1px solid #222; font-size: 11px; line-height: 1.7; color: #555;">
+        <p style="margin-bottom: 15px;">
+            <strong>Risk Disclosure:</strong>Futures, foreign currency and options trading contains substantial risk and is not for every investor. An investor could potentially lose all or more than the initial investment. Risk capital is money that can be lost without jeopardizing ones financial security or lifestyle. Only risk capital should be used for trading and only those with sufficient risk capital should consider trading. Past performance is not necessarily indicative of future results<br>Hypothetical performance results have many inherent limitations, some of which are described below. No representation is being made that any account will or is likely to achieve profits or losses similar to those shown; in fact, there are frequently sharp differences between hypothetical performance results and the actual results subsequently achieved by any particular trading program. One of the limitations of hypothetical performance results is that they are generally prepared with the benefit of hindsight. In addition, hypothetical trading does not involve financial risk, and no hypothetical trading record can completely account for the impact of financial riskof actual trading. for example, the ability to withstand losses or to adhere to a particular trading program in spite of trading losses are material points which can also adversely affect actual trading results. There are numerous other factors related tothe markets.<br> For informational purposes only. 
+        </p>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+            <span>© 2026 FxStill.com. All Rights Reserved.</span>
+            <span style="font-style: italic;">Engineered for Precision Trading</span>
+        </div>
+    </div>
+</footer>
+				
+			<a href="#top" id="gk-top-link">Back to top</a>
+		</div>
+		
+		
+				
+				
+	</footer>
+	
+		
+	
+		
+		
+		
+	
+	
+		
+		
+	<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/FxStllSite/*"},{"not":{"href_matches":["/FxStllSite/wp-*.php","/FxStllSite/wp-admin/*","/FxStllSite/fxstill-content/uploads/*","/FxStllSite/fxstill-content/*","/FxStllSite/fxstill-content/plugins/*","/FxStllSite/fxstill-content/themes/MeetGavernWP/*","/FxStllSite/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script async data-wp-strategy="async" fetchpriority="low" id="comment-reply-js" src="/FxStllSite/fxstill-includes/js/comment-reply.min.js?ver=7.0"></script>
+<script id="gavern-scripts-js" src="/FxStllSite/fxstill-content/themes/MeetGavernWP/js/gk.scripts.js?ver=7.0"></script>
+<script id="gavern-shortcodes-typography-js" src="/FxStllSite/fxstill-content/themes/MeetGavernWP/js/shortcodes.typography.js?ver=7.0"></script>
+<script id="gavern-shortcodes-elements-js" src="/FxStllSite/fxstill-content/themes/MeetGavernWP/js/shortcodes.elements.js?ver=7.0"></script>
+<script id="gavern-shortcodes-template-js" src="/FxStllSite/fxstill-content/themes/MeetGavernWP/js/shortcodes.template.js?ver=7.0"></script>
+<script id="gavern-thickbox-js" src="/FxStllSite/fxstill-includes/js/thickbox/thickbox.js?ver=7.0"></script>
+<script id="gk-nsp-js" src="/FxStllSite/fxstill-content/themes/MeetGavernWP/js/widgets/nsp.js?ver=7.0"></script>
+<script id="gk-tabs-js" src="/FxStllSite/fxstill-content/themes/MeetGavernWP/js/widgets/tabs.js?ver=7.0"></script>
+<script id="zoom-social-icons-widget-frontend-js" src="/FxStllSite/fxstill-content/plugins/social-icons-widget-by-wpzoom/assets/js/social-icons-widget-frontend.js?ver=1780162039"></script>
+<script id="gavern-menu-js" src="/FxStllSite/fxstill-content/themes/MeetGavernWP/js/gk.menu.js?ver=7.0"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"/FxStllSite/fxstill-includes/js/wp-emoji-release.min.js?ver=7.0"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
+//# sourceURL=/fxstill-includes/js/wp-emoji-loader.min.js
+</script>
+	
+	
+</body></html>
+
